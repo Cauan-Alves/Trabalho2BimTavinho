@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import Home from './home'; // Assuming './home' is the correct path to Home component
+import { Text, View, StyleSheet, TouchableOpacity,Image } from 'react-native';
+import Home from './home'; 
 
 export default function App() {
-  const [page, setPage] = useState('sobre'); // Added missing parenthesis and initialized state properly
+  const [page, setPage] = useState('sobre'); 
 
   const renderPage = () => {
     if (page === 'sobre') {

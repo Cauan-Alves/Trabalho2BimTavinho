@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import Sobre from './sobre'; // Assuming './sobre' is the correct path to Sobre component
+import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native'; 
+import mapa from '../assets/images/mapa.png';
+import Sobre from './sobre';
 
 export default function App() {
   const [page, setPage] = useState('home');
@@ -9,10 +10,11 @@ export default function App() {
     if (page === 'home') {
       return (
         <View style={styles.container}>
-          <Text style={styles.title}>Página Principal</Text>
-          <Text style={styles.text}>Exemplo 1</Text>
+          <Text style={styles.title}>Localization</Text>
+          <Image source={mapa} style={styles.image} /> 
+          <Text style={styles.text}>Aperte no botão para saber a latitude e longitude de um lugar no mapa </Text>
           <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
-            <Text style={styles.buttonText}>Clique aqui</Text>
+            <Text style={styles.buttonText}>Localização</Text>
           </TouchableOpacity>
         </View>
       );
@@ -29,27 +31,32 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#680000',
   },
   title: {
-    fontSize: 24,
+    fontSize: 64,
     fontWeight: 'bold',
-    color: '#000',
+    color: 'white',
     marginBottom: 20,
   },
   text: {
-    fontSize: 18,
-    color: '#333',
+    fontSize: 20,
+    color: 'white',
     marginBottom: 10,
   },
   button: {
-    backgroundColor: '#007BFF',
+    backgroundColor: 'black',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 30,
     marginTop: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    resizeMode: 'contain',
   },
   buttonText: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: 32,
   },
 });
